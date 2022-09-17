@@ -18,20 +18,7 @@ string[] SortAndCreatNewArray(string[] array)
             j++;
         }
     }
-    return newArray;
-}
-
-string[] ResizeArray(string[] newArray)
-{
-    int newLengthArray = 0;
-    for (int i = 0; i < newArray.Length; i++)
-    {
-        if(newArray[i] != null)
-        {
-            newLengthArray++;
-        }
-    }
-    Array.Resize(ref newArray, newLengthArray);
+    Array.Resize(ref newArray, j);
     return newArray;
 }
 
@@ -48,6 +35,4 @@ void PrintArray(string[] array)
 
 string[] array = { "Russia", "Volgograd", "Kazan", "123"};  // Начальный массив
 PrintArray(array);
-string[] newArray = SortAndCreatNewArray(array);
-newArray = ResizeArray(newArray);
-PrintArray(newArray);
+PrintArray(SortAndCreatNewArray(array));
